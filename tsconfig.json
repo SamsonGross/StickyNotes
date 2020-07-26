@@ -12,6 +12,12 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/sticky-notes/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/sticky-notes/tsconfig.spec.json"
     }
   ]
 }

@@ -123,6 +123,46 @@
           }
         }
       }
+    },
+    "StickyNotes": {
+      "projectType": "library",
+      "root": "projects/sticky-notes",
+      "sourceRoot": "projects/sticky-notes/src",
+      "prefix": "sem",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/sticky-notes/tsconfig.lib.json",
+            "project": "projects/sticky-notes/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sticky-notes/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sticky-notes/src/test.ts",
+            "tsConfig": "projects/sticky-notes/tsconfig.spec.json",
+            "karmaConfig": "projects/sticky-notes/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/sticky-notes/tsconfig.lib.json",
+              "projects/sticky-notes/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "StickyNotesDemo"
 }
