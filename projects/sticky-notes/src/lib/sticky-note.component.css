@@ -1,0 +1,53 @@
+/* Reference: https://medienmarmela.de/post-its-und-notizzettel-in-css-gestalten */
+
+:host {
+    font-family: 'DPDorkDiary', cursive;
+    width: 170px;
+    display: inline-block;
+    padding: 15px 15px 15px;
+    list-style: none;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+    color: #000;
+    border-bottom-right-radius: 60px 5px !important; /* rounded corner */
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+:host > .topic {
+    font-family: 'DPDorkDiary', cursive;
+    font-size: 1.4em;
+    text-align:center;
+    margin: 0.5em 0 0;
+    line-height:1em;
+    font-weight:bold;
+    overflow: hidden;
+}
+
+:host > text {
+    font-size:1.1em;
+    margin: 0.5em 0;
+}
+
+:host:hover {
+    transform:rotate(0deg);
+}
+
+:host:active {
+    transform:scale(1.05);
+    box-shadow: 0 10px 10px -6px rgba(0, 0, 0, 0.2), 0 16px 20px 2px rgba(0, 0, 0, 0.14), 0 6px 28px 4px rgba(0, 0, 0, 0.12);
+}
+
+:host::after {
+    content:"";
+    position: absolute;
+    bottom: 0;
+    right: -4px;
+    bottom: 3px;
+    width: 100%;
+    height: 80px;
+    background-image: linear-gradient(173deg, rgba(0,0,0,0) 92%,
+    rgba(0,0,0,0.4) 100%);
+    transform: rotate(6deg);
+    z-index: -3;
+    filter: blur(2px);
+  }
