@@ -1,0 +1,35 @@
+:host {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: move;
+}
+
+.enableTextSelection {
+  /* allow text selection */
+  -webkit-touch-callout: initial;
+  -webkit-user-select: initial;
+  -khtml-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
+  cursor: text;
+}
+
+textarea {
+  width: 100%;
+  font: inherit;
+  border: none;
+  background: inherit;
+  cursor: inherit;
+  text-align: inherit;
+  resize: none;
+  /* inherit text selection */
+  -webkit-touch-callout: inherit;
+  -webkit-user-select: inherit;
+  -khtml-user-select: inherit;
+  -moz-user-select: inherit;
+  -ms-user-select: inherit;
+  user-select: inherit;
+
+}
