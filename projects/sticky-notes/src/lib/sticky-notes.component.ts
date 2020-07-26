@@ -1,10 +1,4 @@
 import { HostBinding, Component } from '@angular/core';
-import { CanvasDefaultElementComponent } from '@semantic-canvas/semantic-canvas-core/lib/canvas/components/canvas-default-element/canvas-default-element.component';
-import { ModelElement } from '@semantic-canvas/semantic-canvas-core/lib/model/domain/ModelElement';
-import { ModelAttribute } from '@semantic-canvas/semantic-canvas-core/lib/attributes/domain/ModelAttribute';
-import { CanvasElement } from '@semantic-canvas/semantic-canvas-core/lib/canvas/domain/CanvasElement';
-import { EAttributeType } from '@semantic-canvas/semantic-canvas-core/lib/attributes/domain/EAttributeType';
-import { AttributeFactory } from '@semantic-canvas/semantic-canvas-core/lib/attributes/domain/AttributeFactory';
 
 const ATTRIBUTE_NAME_FOR_TEXT = 'Text';
 
