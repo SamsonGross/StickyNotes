@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SemanticCanvasCoreModule } from '@semantic-canvas/semantic-canvas-core';
+import { StickyNotesModule } from 'sticky-notes';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SemanticCanvasCoreModule } from '@semantic-canvas/semantic-canvas-core'
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    SemanticCanvasCoreModule
+    SemanticCanvasCoreModule,
+    StickyNotesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
