@@ -8,4 +8,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class EditableTextboxComponent {
   @Input() value = '';
   @Output() valueChange: EventEmitter<string> = new EventEmitter<string>();
+
+  onBlur() {
+    this.valueChange.emit(this.value);
+  }
 }
