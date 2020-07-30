@@ -1,12 +1,18 @@
-import { HostBinding, Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+import { ModelElement } from '@semantic-canvas/semantic-canvas-core/lib/model/domain/ModelElement';
+import { ModelAttribute } from '@semantic-canvas/semantic-canvas-core/lib/attributes/domain/ModelAttribute';
+import { CanvasElement } from '@semantic-canvas/semantic-canvas-core/lib/canvas/domain/CanvasElement';
+import { AttributeFactory, EAttributeType, CanvasComponent } from '@semantic-canvas/semantic-canvas-core';
+// tslint:disable-next-line: max-line-length
 
 const ATTRIBUTE_NAME_FOR_TEXT = 'Text';
 
 @Component({
-  selector: 'app-sticky-note',
-  template: '',
+  selector: 'sem-sticky-note',
+  templateUrl: './sticky-note.component.html',
+  styleUrls: ['./sticky-note.component.css']
 })
-export abstract class StickyNotesComponent extends CanvasDefaultElementComponent {
+export class StickyNoteComponent extends CanvasComponent {
   // add random rotation of sticky notes (-5 to 5 degree)
   @HostBinding('style.transform') transform = 'rotate(' + Math.floor((Math.random() * 10) - 5).toString() + 'deg)';
 

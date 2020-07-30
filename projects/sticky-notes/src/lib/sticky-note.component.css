@@ -11,6 +11,7 @@
     border-bottom-right-radius: 60px 5px !important; /* rounded corner */
     position: relative;
     transition: all 0.3s ease;
+    border: 1px solid black;
 }
 
 :host > .topic {

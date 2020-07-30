@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StickyNotesComponent } from './sticky-notes.component';
+import { EditableTextboxComponent } from './editable-textbox.component';
 
-describe('StickyNotesComponent', () => {
-  let component: StickyNotesComponent;
-  let fixture: ComponentFixture<StickyNotesComponent>;
+describe('EditableTextboxComponent', () => {
+  let component: EditableTextboxComponent;
+  let fixture: ComponentFixture<EditableTextboxComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StickyNotesComponent ]
+      declarations: [ EditableTextboxComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StickyNotesComponent);
+    fixture = TestBed.createComponent(EditableTextboxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

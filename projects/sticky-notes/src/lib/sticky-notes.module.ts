@@ -6,7 +6,8 @@ import { StickyNoteYellowComponent } from './yellow/sticky-note-yellow.component
 import { StickyNoteRedComponent } from './red/sticky-note-red.component';
 import { StickyNoteBlueComponent } from './blue/sticky-note-blue.component';
 import { StickyNoteGreenComponent } from './green/sticky-note-green.component';
-import { StickyNoteTextboxComponent } from './sticky-note-textbox/sticky-note-textbox.component';
+import { EditableTextboxComponent } from './editable-textbox/editable-textbox.component';
+import { StickyNoteComponent } from './sticky-note.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { StickyNoteTextboxComponent } from './sticky-note-textbox/sticky-note-te
     StickyNoteRedComponent,
     StickyNoteBlueComponent,
     StickyNoteGreenComponent,
-    StickyNoteTextboxComponent
+    StickyNoteComponent,
+    EditableTextboxComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,7 @@ import { StickyNoteTextboxComponent } from './sticky-note-textbox/sticky-note-te
     StickyNoteYellowComponent,
     StickyNoteRedComponent,
     StickyNoteBlueComponent,
-    StickyNoteGreenComponent,
+    StickyNoteGreenComponent
   ]
 })
 export class StickyNotesModule { }
