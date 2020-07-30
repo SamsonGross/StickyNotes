@@ -1,8 +1,17 @@
 {
-  "name": "sticky-notes",
+  "name": "@semantic-canvas/sticky-note",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^10.0.5",
     "@angular/core": "^10.0.5"
-  }
+  },
+  "license": "MIT",
+  "author": "Samson Groß <samson.gross@live.de>",
+  "keywords": [
+    "semantic",
+    "canvas",
+    "stickynote",
+    "sticky",
+    "note"
+  ]
 }
