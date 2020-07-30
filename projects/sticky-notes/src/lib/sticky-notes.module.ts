@@ -21,12 +21,6 @@ import { StickyNoteComponent } from './sticky-note.component';
   imports: [
     CommonModule,
     FormsModule
-  ],
-  exports: [
-    StickyNoteYellowComponent,
-    StickyNoteRedComponent,
-    StickyNoteBlueComponent,
-    StickyNoteGreenComponent
   ]
 })
 export class StickyNotesModule { }

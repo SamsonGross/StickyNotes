@@ -93,7 +93,6 @@ export class AppComponent {
       relations: [
         // none yet
       ]
-
     }
   }];
 }
