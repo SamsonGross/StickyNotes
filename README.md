@@ -1,27 +1,161 @@
-# StickyNotesDemo
+# StickyNotes for the Semantic Canvas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.11.
+Showcase: https://samsongross.github.io/semantic-canvas-demo/
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### 1. Install SemanticCanvasCore
 
-## Code scaffolding
+see: https://www.npmjs.com/package/@semantic-canvas/semantic-canvas-core
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 2. Install StickyNotes with npm:
 
-## Build
+```
+npm install @semantic-canvas/sticky-notes
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### 3. Add library assets to your project
 
-## Running unit tests
+Navigate to angular.json
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```json
+"assets": [
+  "src/favicon.ico",
+  "src/assets",
+  {
+    "glob": "**/*",
+    "input": "./node_modules/@semantic-canvas/sticky-notes/assets",
+    "output": "./assets/"
+  }
+]
+```
 
-## Running end-to-end tests
+### 4. Import module
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Navigate to app.module.ts
 
-## Further help
+```typescript
+import { StickyNotesModule } from '@semantic-canvas/sticky-notes';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    SemanticCanvasCoreModule,
+    StickyNotesModule
+],
+```
+
+## How to use
+
+### 1. Define StickyNote shapes
+
+```typescript
+// app.component.ts
+import { ICanvasElementShape } from '@semantic-canvas/semantic-canvas-core/lib/canvas/domain/ICanvasElementShape';
+
+myCustomShapes: ICanvasElementShape[] = [
+    {
+      name: 'StickyNoteYellow',
+      width: 170,
+      height: 70,
+      containerShadow: false,
+      iconUrl: 'assets/stickynotes/StickyNoteYellow.svg'
+    }, {
+      name: 'StickyNoteBlue',
+      width: 170,
+      height: 70,
+      containerShadow: false,
+      iconUrl: 'assets/stickynotes/StickyNoteBlue.svg'
+    }, {
+      name: 'StickyNoteGreen',
+      width: 170,
+      height: 70,
+      containerShadow: false,
+      iconUrl: 'assets/stickynotes/StickyNoteGreen.svg'
+    }, {
+      name: 'StickyNoteRed',
+      width: 170,
+      height: 70,
+      containerShadow: false,
+      iconUrl: 'assets/stickynotes/StickyNoteRed.svg'
+    }
+  ];
+```
+
+### 2. Define StickyNote model package
+
+```typescript
+// app.component.ts
+import { IModelPackage } from '@semantic-canvas/semantic-canvas-core/lib/library/domain/IModelPackage';
+
+ myCustomModelPackage: IModelPackage[] = [
+    {
+      title: 'Sticky Notes',
+      description: 'StickyNotes to use on the canvas',
+      inToolbar: true,
+      model: {
+        elements: [
+          {
+            type: 'StickyNoteYellow',
+            name: 'Yellow Sticky Note'
+          },
+          {
+            type: 'StickyNoteRed',
+            name: 'Red Sticky Note'
+          },
+          {
+            type: 'StickyNoteBlue',
+            name: 'Blue Sticky Note'
+          },
+          {
+            type: 'StickyNoteGreen',
+            name: 'Green Sticky Note'
+          }
+        ],
+        relations: [
+          // none yet
+        ]
+      }
+    }
+  ];
+```
+
+### 3. Define StickyNote ShapeFactories
+
+```typescript
+// app.component.ts
+import { GenericCanvasFactory } from '@semantic-canvas/semantic-canvas-core';
+import { StickyNoteYellowComponent, StickyNoteRedComponent, StickyNoteGreenComponent, StickyNoteBlueComponent } from '@semantic-canvas/sticky-notes';
+
+myCustomFactories: ICanvasShapeFactory[] = [
+     {
+      type: 'StickyNoteYellow',
+      factory: new GenericCanvasFactory<StickyNoteYellowComponent>(StickyNoteYellowComponent)
+    },
+    {
+      type: 'StickyNoteRed',
+      factory: new GenericCanvasFactory<StickyNoteRedComponent>(StickyNoteRedComponent)
+    },
+    {
+      type: 'StickyNoteGreen',
+      factory: new GenericCanvasFactory<StickyNoteGreenComponent>(StickyNoteGreenComponent)
+    },
+    {
+      type: 'StickyNoteBlue',
+      factory: new GenericCanvasFactory<StickyNoteBlueComponent>(StickyNoteBlueComponent)
+    }
+  ];
+```
+
+### 4. Add canvas parameter
+
+```html
+<!-- app.component.html-->
+
+<sem-semantic-canvas
+  [elementShapes]="myCustomShapes"
+  [modelPackages]="myCustomModelPackage"
+  [shapeFactories]="myCustomFactories"
+>
+</sem-semantic-canvas>
+```
