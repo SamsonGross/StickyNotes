@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
-import { ICanvasShapeFactory } from '@semantic-canvas/semantic-canvas-core/lib/canvas/domain/ICanvasShapeFactory';
-import { GenericCanvasFactory } from '@semantic-canvas/semantic-canvas-core/lib/canvas/domain/GenericCanvasFactory';
-import { ICanvasElementShape } from '@semantic-canvas/semantic-canvas-core/lib/canvas/domain/ICanvasElementShape';
-import { StickyNoteYellowComponent, StickyNoteRedComponent, StickyNoteGreenComponent, StickyNoteBlueComponent } from 'sticky-notes';
 import { IModelPackage } from '@semantic-canvas/semantic-canvas-core/lib/library/domain/IModelPackage';
+import { ICanvasElementShape } from '@semantic-canvas/semantic-canvas-core/lib/canvas/domain/ICanvasElementShape';
+import { ICanvasShapeFactory } from '@semantic-canvas/semantic-canvas-core/lib/canvas/domain/ICanvasShapeFactory';
+import { StickyNoteRedComponent } from 'projects/sticky-notes/src/lib/red/sticky-note-red.component';
+import { StickyNoteYellowComponent } from 'projects/sticky-notes/src/lib/yellow/sticky-note-yellow.component';
+import { StickyNoteBlueComponent } from 'projects/sticky-notes/src/lib/blue/sticky-note-blue.component';
+import { StickyNoteGreenComponent } from 'projects/sticky-notes/src/lib/green/sticky-note-green.component';
+import { GenericCanvasFactory } from '@semantic-canvas/semantic-canvas-core';
+
 
 
 @Component({
@@ -14,21 +18,25 @@ import { IModelPackage } from '@semantic-canvas/semantic-canvas-core/lib/library
 export class AppComponent {
   title = 'StickyNotesDemo';
 
+
   stickyNotesFactories: ICanvasShapeFactory[] = [
     // Sticky Notes
     {
       type: 'StickyNoteYellow',
       factory: new GenericCanvasFactory<StickyNoteYellowComponent>(StickyNoteYellowComponent)
-    }, {
+    },
+    {
       type: 'StickyNoteRed',
       factory: new GenericCanvasFactory<StickyNoteRedComponent>(StickyNoteRedComponent)
-    }, {
+    },
+    {
       type: 'StickyNoteGreen',
       factory: new GenericCanvasFactory<StickyNoteGreenComponent>(StickyNoteGreenComponent)
-    }, {
+    },
+    {
       type: 'StickyNoteBlue',
       factory: new GenericCanvasFactory<StickyNoteBlueComponent>(StickyNoteBlueComponent)
-    },
+    }
   ];
 
   stickyNotesShapes: ICanvasElementShape[] = [
@@ -37,25 +45,25 @@ export class AppComponent {
       width: 170,
       height: 70,
       containerShadow: false,
-      iconUrl: 'assets/images/domain/stickynotes/StickyNoteYellow.svg'
+      iconUrl: 'assets/stickynotes/StickyNoteYellow.svg'
     }, {
       name: 'StickyNoteBlue',
       width: 170,
       height: 70,
       containerShadow: false,
-      iconUrl: 'assets/images/domain/stickynotes/StickyNoteBlue.svg'
+      iconUrl: 'assets/stickynotes/StickyNoteBlue.svg'
     }, {
       name: 'StickyNoteGreen',
       width: 170,
       height: 70,
       containerShadow: false,
-      iconUrl: 'assets/images/domain/stickynotes/StickyNoteGreen.svg'
+      iconUrl: 'assets/stickynotes/StickyNoteGreen.svg'
     }, {
       name: 'StickyNoteRed',
       width: 170,
       height: 70,
       containerShadow: false,
-      iconUrl: 'assets/images/domain/stickynotes/StickyNoteRed.svg'
+      iconUrl: 'assets/stickynotes/StickyNoteRed.svg'
     }
   ];
 
