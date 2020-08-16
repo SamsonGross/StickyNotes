@@ -51,7 +51,8 @@ imports: [
 
 ```typescript
 // app.component.ts
-import { ICanvasElementShape } from '@semantic-canvas/semantic-canvas-core/lib/canvas/domain/ICanvasElementShape';
+
+import { ICanvasElementShape } from '@semantic-canvas/semantic-canvas-core';
 
 myCustomShapes: ICanvasElementShape[] = [
     {
@@ -86,7 +87,8 @@ myCustomShapes: ICanvasElementShape[] = [
 
 ```typescript
 // app.component.ts
-import { IModelPackage } from '@semantic-canvas/semantic-canvas-core/lib/library/domain/IModelPackage';
+
+import { IModelPackage } from '@semantic-canvas/semantic-canvas-core';
 
  myCustomModelPackage: IModelPackage[] = [
     {
@@ -124,6 +126,7 @@ import { IModelPackage } from '@semantic-canvas/semantic-canvas-core/lib/library
 
 ```typescript
 // app.component.ts
+
 import { GenericCanvasFactory } from '@semantic-canvas/semantic-canvas-core';
 import { StickyNoteYellowComponent, StickyNoteRedComponent, StickyNoteGreenComponent, StickyNoteBlueComponent } from '@semantic-canvas/sticky-notes';
 
