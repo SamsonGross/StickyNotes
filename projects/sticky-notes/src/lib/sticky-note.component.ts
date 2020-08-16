@@ -1,7 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
-import { ModelElement } from '@semantic-canvas/semantic-canvas-core/lib/model/domain/ModelElement';
-import { ModelAttribute } from '@semantic-canvas/semantic-canvas-core/lib/attributes/domain/ModelAttribute';
-import { CanvasElement } from '@semantic-canvas/semantic-canvas-core/lib/canvas/domain/CanvasElement';
+import { ModelElement } from '@semantic-canvas/semantic-canvas-core';
+import { ModelAttribute } from '@semantic-canvas/semantic-canvas-core';
+import { CanvasElement } from '@semantic-canvas/semantic-canvas-core';
 import { AttributeFactory, EAttributeType, CanvasComponent } from '@semantic-canvas/semantic-canvas-core';
 // tslint:disable-next-line: max-line-length
 
